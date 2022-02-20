@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+<div class="conainer">
+    <h3>Add Todos</h3>
+    <div class="container">
+        <form method="POST" action="/addtodos">
+            {% csrf_token %}
+            <label for="title" class="form-label">Title:</label>
+            <input type="text" class="form-control" id="title" name="title">
+            <label for="description" class="form-label">Description</label>
+            <textarea type="text" class="form-control" id="description" name="description"></textarea>
+            <div class="form-check">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Complete
+                </label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="True" id="flexCheckDefault" name="complete">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="False" id="flexCheckChecked" name="complete" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                      No
+                    </label>
+                  </div>
+              </div>
+            <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+    </div>
+</div>
+{% endblock body %}

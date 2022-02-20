@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+<div class="container">
+    <h1> Todo List </h1>
+</div>
+{% for todo in todos %}
+<div class="container">
+    <h3>{{todo.title}}</h3>
+    <dl>
+        <dt>Description</dt>
+        <dd>{{todo.description}}</dd>
+        <dt>Complete</dt>
+        <dd>{{todo.complete}}</dd>
+        <dt>Created</dt>
+        <dd>{{todo.created}}</dd>
+    </dl>
+</div>
+{% endfor %} 
+{% endblock body %}
